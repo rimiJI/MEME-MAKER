@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Maker</title>
+    <!-- link:CSS이거 탭처리하면 나옴  -->
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">    
+</head>
+<body>
+    <!-- 하나 선택한담에 ^+alt+아래방향키 | ^+alt+왼방향키로 선택 | ^+X 잘라내기 | div만들기 -->
+    <div class="color-options">
+        <!-- 컬러 기능 -->
+        <input type="color" id="color"/>
+        <div class="color-option" style="background-color: #55efc4;" data-color="#55efc4"></div>
+        <div class="color-option" style="background-color: #81ecec;" data-color="#81ecec"></div>
+        <div class="color-option" style="background-color: #74b9ff;" data-color="#74b9ff"></div>
+        <div class="color-option" style="background-color: #a29bfe;" data-color="#a29bfe"></div>
+        <div class="color-option" style="background-color: #00b894;" data-color="#00b894"></div>
+        <div class="color-option" style="background-color: #00cec9;" data-color="#00cec9"></div>
+        <div class="color-option" style="background-color: #0984e3;" data-color="#0984e3"></div>
+        <div class="color-option" style="background-color: #6c5ce7;" data-color="#6c5ce7"></div>
+        <div class="color-option" style="background-color: #fd79a8;" data-color="#fd79a8"></div>
+    </div>
+    <!-- 그림을 그릴 수 있는 HTML 요소 (JS로 조작 가능) -->
+    <canvas></canvas>
+    <div class="btns">
+        <span>Pencil Width</span>
+        <!-- 슬라이드 기능 -->
+         <!--value : 실행할 때 값 | step : 단계값 -->
+        <input 
+        id="line-width" 
+        type="range" 
+        min="1" 
+        max="10" 
+        value="5" 
+        step="0.5"
+        />
+        <!-- 버튼 생성 -->
+        <button id="mode-btn">Fill</button>
+        <button id="destroy-btn">Destroy</button>
+        <button id="eraser-btn">Eraser</button>
+        <label for="file"> <!--for값이 id값과같으면 됨 -->
+            Add Photo
+            <input type="file" accept="image/*" id="file"/> 
+            <!--image/* : 어떤 이미지든 이미지만 원한단뜻--></label>
+        <input type="text" placeholder="Write and then double click" id="text"/>
+        <button id="save">Save image</button>
+    </div>
+    <!-- 자바스크립트 코드(app.js)를 이 HTML 문서에 연결 : 외부 JS 파일을 현재 HTML에 실행시켜주는 연결 고리 -->
+    <script src="app.js"></script>
+</body>
+</html> 
